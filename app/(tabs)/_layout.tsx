@@ -1,4 +1,4 @@
-import { Stack } from "expo-router";
+import { Tabs } from "expo-router";
 
 // Expo Router is a file-based routing framework for React Native and web apps.
 // It manages navigations between screens.
@@ -9,10 +9,12 @@ import { Stack } from "expo-router";
 // The Link component is a React component that renders a <Text> with a given href property
 // It will be used to navigate from the /index route to the /about route.
 
-export default function RootLayout() {
+export default function TabLayout() {
   return (
-    <Stack>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-    </Stack>
+    <Tabs>
+      <Tabs.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Tabs.Screen name="index" options={{ title: "Home" }} />
+      <Tabs.Screen name="about" options={{ title: "About" }} />
+    </Tabs>
   );
 }
