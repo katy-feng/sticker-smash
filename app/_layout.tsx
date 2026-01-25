@@ -1,24 +1,19 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
+import { Stack } from "expo-router";
 
-import { useColorScheme } from '@/hooks/use-color-scheme';
+// Expo Router is a file-based routing framework for React Native and web apps.
+// It manages navigations between screens.
 
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
+// A Stack or Stack Navigator is the foundation for navigating between different screens in an app.
+// Expo Router provides a 'Stack' component to create a navigation stack to add new routes.
+
+// The Link component is a React component that renders a <Text> with a given href property
+// It will be used to navigate from the /index route to the /about route.
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <Stack>
+      <Stack.Screen name="index" options={{ title: "Home" }} />
+      <Stack.Screen name="about" options={{ title: "About" }} />
+    </Stack>
   );
 }
