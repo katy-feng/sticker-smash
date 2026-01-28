@@ -1,4 +1,6 @@
+import Button from '@/components/Button';
 import ImageViewer from '@/components/ImageViewer';
+
 import { Link } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 
@@ -10,6 +12,10 @@ export default function Index() {
     <View style={styles.container}>
       <View style={styles.imageContainer}>
         <ImageViewer imgSource={placeHolderImage} />
+      </View>
+      <View style={styles.footerContainer}>
+        <Button label="Choose a photo" />
+        <Button label="Use this photo" />
       </View>
       <Text style={styles.text}>Home screen</Text>
       <Link href="/about" style={styles.button}>
@@ -36,5 +42,9 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     flex: 1,
+  },
+  footerContainer: {
+    flex: 1 / 3,
+    alignItems: 'center',
   },
 });
